@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import useFetchUserData from './utils/useFetchUserData'
+
 
 function App() {
+
+  //Setting up a custom hook to fetch user data
+  const [currentUserApiData] = useFetchUserData("12" as string)
+
+  if (currentUserApiData === null) {
   return (
-    <div className="App">
+    <header className="App-header">
+      <div>Fetching data, please wait...</div>
+    </header>
+  )
+  } else if (currentUserApiData === undefined) {
+    return (
+        <div className="App">
+        <header className="App-header">
+          <div>Sorry, user does not exist</div>
+        </header>
+        </div>
+    )
+  } else {
+    return (
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>{currentUserApiData.data.id}</div>
+        <div>{currentUserApiData.data.userInfos.firstName}</div>
+        <div>{currentUserApiData.data.userInfos.lastName}</div>
+        <div>{currentUserApiData.data.userInfos.age}</div>
+        <div>{currentUserApiData.data.score}</div>
+        <div>{currentUserApiData.data.keyData.proteinCount}</div>
+        <div>{currentUserApiData.data.keyData.calorieCount}</div>
+        <div>{currentUserApiData.data.keyData.lipidCount}</div>
+        <div>{currentUserApiData.data.keyData.carbohydrateCount}</div>
       </header>
-    </div>
-  );
+      </div>
+  )
+  }
 }
 
 export default App;
