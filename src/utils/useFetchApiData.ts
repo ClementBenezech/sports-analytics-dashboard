@@ -10,16 +10,14 @@ const useFetchApiData = <Type>(query: string, dataType: Type):[Type | null | und
     // 3) undefined, if an invalid response was received.
     const [apiData, setApiData] = useState< typeof dataType| null | undefined>(null)
 
-    // After each render...
     useEffect(() => {
-        // If we do not have data from the API yet, fetch it!
         if (apiData === null) {    
         // Fetching data
             fetch('http://localhost:3000/user/'+query, {mode: 'cors'})
             .then (response => 
                 response.json())
             .then (response => {
-                const data = response;
+                const data = response.data; /*Ajouter l'alias de type pour la réponse*/
                 //setting new value for apiData with what we got from the API call
                 if (data !== "can not get user") {
                     // If the result of the call is not an error message
