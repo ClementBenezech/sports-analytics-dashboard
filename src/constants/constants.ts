@@ -1,0 +1,1 @@
+export const notFoundIcon:string = 'fas fa-heart-broken'

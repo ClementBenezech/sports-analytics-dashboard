@@ -11,7 +11,6 @@ const HeaderContainer = styled.div`
 
 const Logo = styled.img`
     width: 20%;
-    background-color: red;
     height: 100%;
 `
 

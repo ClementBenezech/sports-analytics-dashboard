@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const SideBarContainer = styled.div`
-    width: 5vw;
+    width: 4vw;
     height: 90vh;
     background-color:black;
     display: flex;
