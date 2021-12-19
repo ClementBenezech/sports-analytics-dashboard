@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import KeyValues from "../pages/home/KeyValues";
 import NameCard from "../pages/home/NameCard";
 
 const MainContentContainer = styled.div`
@@ -14,6 +15,7 @@ const MainContent = (props : {userId : string}) => {
                     return (  
                         <MainContentContainer>
                             <NameCard userId = {props.userId}/>
+                            <KeyValues userId = {props.userId}/>
                         </MainContentContainer>
                     )
 }

@@ -10,7 +10,7 @@ function App() {
       <div className="App">
       <Header/>
       <SideBar/>
-      <MainContent userId = '17'/>
+      <MainContent userId = '18'/>
       </div>
   )
 }

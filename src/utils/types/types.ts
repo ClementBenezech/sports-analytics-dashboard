@@ -9,7 +9,7 @@ export type userData = {
         }
         score: number
         keyData: {
-            calorieCount : number
+            [calorieCount : string] : number
             proteinCount : number
             carbohydrateCount : number
             lipidCount: number
@@ -27,7 +27,7 @@ export type sessions = {
 
 export type  userActivity = {
         userId: string
-        sessions: sessions []
+        sessions: sessions [] /* Test this syntax */
 }
 
 // Data type for user performance (To be validated)
