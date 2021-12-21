@@ -4,12 +4,12 @@ import { userData } from "../../utils/types/types";
 import { notFoundIcon } from "../../constants/constants";
 
 const NameCardContainer = styled.div`
-    width: 24vw;
-    height: 5vw;
+    width: 100vw;
+    height: 10%;
     background-color:white;
     display: flex;
     align-items:center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     font-size: 2vw;
     color: black;
     & i {
@@ -18,15 +18,16 @@ const NameCardContainer = styled.div`
 `;
 
 const NameCardLabel = styled.div`
-    width: 50%;
+    width: max-content;
+    margin: 0 2vw 0 2vw;
 `
 
 const NameCardValue = styled.div`
-    width: 50%;
-    color: red
+    width: max-content;
+    color: red;
 `
 
-const NameCard = (props : {userId : string}) => {
+const NameCard = (props : {userId : string}):JSX.Element => {
 
     const [currentUserApiData] = useFetchApiData(props.userId as string, {} as userData )
 

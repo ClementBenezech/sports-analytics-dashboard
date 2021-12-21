@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import logo from '../logo.svg'
+import logo from '../logo.png'
 import Nav from "./Nav";
 
 const HeaderContainer = styled.div`
@@ -10,8 +10,9 @@ const HeaderContainer = styled.div`
 `;
 
 const Logo = styled.img`
-    width: 20%;
+    width: 10%;
     height: 100%;
+    object-fit:contain;
 `
 
 

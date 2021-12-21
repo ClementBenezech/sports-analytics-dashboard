@@ -23,14 +23,14 @@ export type sessions = {
         calories: number
 }
 
-// Data Type for user activity (To be validated)
+// Data Type for user activity
 
 export type  userActivity = {
         userId: string
-        sessions: sessions [] /* Test this syntax */
+        sessions: sessions [] 
 }
 
-// Data type for user performance (To be validated)
+// Data type for user performance
 
 export type userPerformance = {
         userId: string
@@ -47,11 +47,9 @@ export type userPerformance = {
 
 // Data type for user sport sessions
 
-export type userSessions = {
-    data: {
+export type userAverageSessions = {
         userId: string
         sessions: sessions []
-    }
 }
 
 /* Break down into multiple types (session[], used by userSessions)*/

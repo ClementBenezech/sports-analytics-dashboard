@@ -6,6 +6,7 @@ const KeyValueCardContainer = styled.div`
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
+    background-color: #fffcf9;
 `
 const KeyValueCardDataContainer = styled.div`
     width: 70%;
