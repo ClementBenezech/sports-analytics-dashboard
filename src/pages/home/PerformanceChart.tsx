@@ -9,7 +9,7 @@ const PerformanceChart = (props:{userId : string}):JSX.Element => {
     if (currentUserActivityApiData !== null && currentUserActivityApiData !== undefined) {
         console.log(currentUserActivityApiData.data)
         return (
-            <ResponsiveContainer width="25%" height={280}> 
+            <ResponsiveContainer width="25%" height='40%'> 
                 <RadarChart
                 outerRadius={90}
                 width={400}

@@ -6,7 +6,7 @@ import ScoreChart from "./ScoreChart";
 
 const DataChartsContainer = styled.div`
     width: 65vw;
-    height: 30vh;
+    height: 75%;
     background-color:white;
     display: flex;
     flex-wrap:wrap;

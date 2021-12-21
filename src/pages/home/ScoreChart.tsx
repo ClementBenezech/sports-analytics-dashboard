@@ -11,7 +11,7 @@ const ScoreChart = (props:{userId: string}) => {
         const score = currentUserApiData.score*100 + ' %'
 
     return(
-        <ResponsiveContainer width="25%"> 
+        <ResponsiveContainer width="25%" height="40%"> 
         <RadialBarChart
                 width={400} 
                 height={400} 

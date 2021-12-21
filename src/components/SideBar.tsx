@@ -12,7 +12,6 @@ const SideBarContainer = styled.div`
 
 const SideBar = () => {
     return  <SideBarContainer>
-                SideBarContainer
             </SideBarContainer>
 }
 export default SideBar

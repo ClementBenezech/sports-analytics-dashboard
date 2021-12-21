@@ -5,7 +5,7 @@ import { notFoundIcon } from "../../constants/constants";
 
 const NameCardContainer = styled.div`
     width: 100vw;
-    height: 10%;
+    height: 10vh;
     background-color:white;
     display: flex;
     align-items:center;

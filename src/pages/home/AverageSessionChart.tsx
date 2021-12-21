@@ -9,7 +9,7 @@ const AverageSessionChart = (props:{userId : string}):JSX.Element => {
     if (currentUserActivityApiData !== null && currentUserActivityApiData !== undefined) {
         console.log(currentUserActivityApiData.sessions)
         return (
-            <ResponsiveContainer width="25%" height={280}> 
+            <ResponsiveContainer width="25%" height='40%'> 
                 <LineChart
                 barCategoryGap="30%"
                 barGap="10%"

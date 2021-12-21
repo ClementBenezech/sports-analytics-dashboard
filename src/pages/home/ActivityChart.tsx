@@ -9,7 +9,7 @@ const ActivityChart = (props:{userId : string}):JSX.Element => {
     if (currentUserActivityApiData !== null && currentUserActivityApiData !== undefined) {
         console.log(currentUserActivityApiData.sessions)
         return (
-            <ResponsiveContainer width="100%" height={280}> 
+            <ResponsiveContainer width="100%" height='40%'> 
                 <BarChart
                 barCategoryGap="30%"
                 barGap="10%"
