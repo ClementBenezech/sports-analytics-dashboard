@@ -7,7 +7,8 @@ import { keyValuesLabelsAndIcons } from "../../constants/constants";
 
 const KeyValuesContainer = styled.div`
     width: 24vw;
-    height: auto;
+    height: 70%;
+    margin-left: 3vw;
     background-color:white;
     display: flex;
     flex-wrap: wrap;

@@ -5,17 +5,18 @@ import DataCharts from "../pages/home/DataCharts";
 
 const MainContentContainer = styled.div`
     width: 95%;
+    padding-left: 5%;
     height: 90vh;
     display: flex;
     flex-wrap:wrap;
     flex-direction:row;
     align-items:center;
-    align-content:flex-start;
-
+    justify-content:flex-start;
+    box-sizing: border-box;
 `;
 
 const Greeting = styled.div`
-    width: 95vw;
+    width: 85vw;
     height: 10vh;
     display: flex;
     flex-wrap:wrap;

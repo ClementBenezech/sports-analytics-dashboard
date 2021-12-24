@@ -1,6 +1,20 @@
 import { ResponsiveContainer, Bar, BarChart, XAxis, Tooltip, CartesianGrid } from 'recharts';
 import { userActivity } from '../../utils/types/types';
 import useFetchApiData from '../../utils/useFetchApiData';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    background-color: #FBFBFB;
+    border-radius: 0.3vw;
+    width: 100%;
+    height: 15vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    & i {
+        color: red;
+    }
+`
 
 const ActivityChart = (props:{userId : string}):JSX.Element => {
 
@@ -9,7 +23,8 @@ const ActivityChart = (props:{userId : string}):JSX.Element => {
     if (currentUserActivityApiData !== null && currentUserActivityApiData !== undefined) {
         console.log(currentUserActivityApiData.sessions)
         return (
-            <ResponsiveContainer width="100%" height='40%'> 
+           <Wrapper>
+           <ResponsiveContainer width="100%" height='100%'> 
                 <BarChart
                 barCategoryGap="30%"
                 barGap="10%"
@@ -25,11 +40,11 @@ const ActivityChart = (props:{userId : string}):JSX.Element => {
                     <Bar type="monotone" dataKey="calories" fill="red"  radius={[10, 10, 0 , 0]} yAxisId={1} />
                 </BarChart>
             </ResponsiveContainer>
+            </Wrapper>
     )
     } else {
-        return <div><i className = "fas fa-basketball-ball fa-spin"></i></div>
+        return <Wrapper><i className = "fas fa-basketball-ball fa-spin"></i></Wrapper>
     }
-    
     
 } 
 

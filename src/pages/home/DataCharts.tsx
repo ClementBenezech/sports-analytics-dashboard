@@ -5,18 +5,15 @@ import PerformanceChart from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
 
 const DataChartsContainer = styled.div`
-    width: 65vw;
+    width: 65%;
     height: 75%;
     background-color:white;
     display: flex;
     flex-wrap:wrap;
     align-items:flex-start;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 2vw;
     color: black;
-    & i {
-        color: red;
-    }
 `
 
 const DataCharts = (props : {userId : string}) => {
