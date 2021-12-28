@@ -1,16 +1,18 @@
-import { ResponsiveContainer, Bar, BarChart, XAxis, Tooltip, CartesianGrid } from 'recharts';
+import { ResponsiveContainer, Bar, BarChart, XAxis, Tooltip, CartesianGrid, YAxis } from 'recharts';
 import { userActivity } from '../../utils/types/types';
 import useFetchApiData from '../../utils/useFetchApiData';
 import styled from 'styled-components';
+import internal from 'stream';
 
 const Wrapper = styled.div`
     background-color: #FBFBFB;
     border-radius: 0.3vw;
     width: 100%;
-    height: 15vw;
+    height: 13vw;
     display:flex;
     justify-content:center;
     align-items:center;
+    padding: 1vw;
     & i {
         color: red;
     }
@@ -22,6 +24,16 @@ const ActivityChart = (props:{userId : string}):JSX.Element => {
 
     if (currentUserActivityApiData !== null && currentUserActivityApiData !== undefined) {
         console.log(currentUserActivityApiData.sessions)
+
+        const readyToDisplay:any[] = currentUserActivityApiData.sessions.map(session => {
+            return (
+            {
+                calories: session.calories,
+                day: session.day.slice(session.day.length -1), 
+                kilogram: session.kilogram
+            })
+        })
+
         return (
            <Wrapper>
            <ResponsiveContainer width="100%" height='100%'> 
@@ -30,14 +42,16 @@ const ActivityChart = (props:{userId : string}):JSX.Element => {
                 barGap="10%"
                 width={400}
                 height={400}
-                data={currentUserActivityApiData.sessions}
+                data={/*currentUserActivityApiData.sessions*/readyToDisplay}
                 margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                 >
+                    <YAxis tickLine={false} axisLine={false} interval={1} tickMargin={15} yAxisId="right" orientation="right" domain={['dataMin - 1', 'dataMax + 1']} fontSize={'1vw'}/>
                     <XAxis dataKey="day" fontSize={20}/>
-                    <Tooltip />
-                    <CartesianGrid stroke="#f5f5f5" />
-                    <Bar type="monotone" dataKey="kilogram" fill="black" radius={[10, 10, 0 , 0]} yAxisId={0} />
-                    <Bar type="monotone" dataKey="calories" fill="red"  radius={[10, 10, 0 , 0]} yAxisId={1} />
+                    <YAxis yAxisId="left" orientation="left" hide={true}  />
+                    <Tooltip labelStyle={{'display':'none'}} />
+
+                    <Bar type="monotone" dataKey="kilogram" fill="black" radius={[10, 10, 0 , 0]} yAxisId="right" barSize={10} />
+                    <Bar type="monotone" dataKey="calories" fill="red"  radius={[10, 10, 0 , 0]}  yAxisId="left" barSize={10} />
                 </BarChart>
             </ResponsiveContainer>
             </Wrapper>

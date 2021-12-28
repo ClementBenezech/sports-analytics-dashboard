@@ -5,13 +5,15 @@ import { notFoundIcon } from "../../constants/constants";
 
 const NameCardContainer = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 3vw;
     background-color:white;
     display: flex;
     align-items:center;
     justify-content: flex-start;
-    font-size: 2vw;
+    font-size: 3vw;
     color: black;
+    font-weight:bold;
+    margin-top: 2vw;
     & i {
         color: red;
     }
@@ -19,7 +21,7 @@ const NameCardContainer = styled.div`
 
 const NameCardLabel = styled.div`
     width: max-content;
-    margin: 0 2vw 0 2vw;
+    margin: 0 1vw 0 0;
 `
 
 const NameCardValue = styled.div`

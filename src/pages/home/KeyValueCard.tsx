@@ -2,15 +2,18 @@ import styled from "styled-components"
 
 const KeyValueCardContainer = styled.div`
     width: 100%;
-    height: auto;
+    height: 20%;
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
     background-color: #fffcf9;
     font-size: 1vw;
+    align-content:center;
+    justify-items:center;
+    align-items:center;
 `
 const KeyValueCardDataContainer = styled.div`
-    width: 70%;
+    width: auto;
     height: 4vw;
     display:flex;
     flex-direction: row;
@@ -26,15 +29,16 @@ const KeyValueCardValue = styled.div`
     font-weight: bold;
 `
 const KeyValueCardIcon = styled.img`
-    width: 2vw;
-    height: 2vw;
-    margin: 1vw;
+    width: 3vw;
+    height: 3vw;
     padding: 0.5vw;
+    margin-left: 2vw;
     box-sizing:border-box;
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
-    align-content:center;
+    align-items:center;
+    justify-content:center;
     justify-items:center;
     background-color: lightgrey;
     border-radius: 0.2vw;

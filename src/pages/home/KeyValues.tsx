@@ -6,20 +6,21 @@ import KeyValueCard from "./KeyValueCard";
 import { keyValuesLabelsAndIcons } from "../../constants/constants";
 
 const KeyValuesContainer = styled.div`
-    width: 24vw;
-    height: 70%;
+    width: 14vw;
+    height: 75%;
     margin-left: 3vw;
     background-color:white;
     display: flex;
     flex-wrap: wrap;
-    align-items:center;
-    justify-content: space-evenly;
+    align-items:flex-start;
+    justify-content: space-between;
     font-size: 2vw;
     color: black;
+    padding: 1vw;
     & i {
         color: red;
     }
-`;
+`
 
 
 const KeyValues = (props : {userId : string}) => {

@@ -5,7 +5,7 @@ import PerformanceChart from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
 
 const DataChartsContainer = styled.div`
-    width: 65%;
+    width: 75%;
     height: 75%;
     background-color:white;
     display: flex;

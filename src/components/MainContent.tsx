@@ -4,7 +4,7 @@ import NameCard from "../pages/home/NameCard";
 import DataCharts from "../pages/home/DataCharts";
 
 const MainContentContainer = styled.div`
-    width: 95%;
+    width: 91%;
     padding-left: 5%;
     height: 90vh;
     display: flex;
@@ -16,12 +16,11 @@ const MainContentContainer = styled.div`
 `;
 
 const Greeting = styled.div`
-    width: 85vw;
-    height: 10vh;
+    width: 100%;
+    height: 3vw;
     display: flex;
     flex-wrap:wrap;
     flex-direction:row;
-    margin-left: 2vw;
 `
 
 

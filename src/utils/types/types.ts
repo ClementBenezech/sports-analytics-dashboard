@@ -16,10 +16,10 @@ export type userData = {
         }
   };
 
-// To be used in user Activities and sessions
+// To be used in user Activities
 export type sessions = {
         day: string
-        kilograms: number
+        kilogram: number
         calories: number
 }
 
@@ -49,7 +49,10 @@ export type userPerformance = {
 
 export type userAverageSessions = {
         userId: string
-        sessions: sessions []
+        sessions: {
+                day: number|string,
+                sessionLength: number 
+        } []
 }
 
 /* Break down into multiple types (session[], used by userSessions)*/

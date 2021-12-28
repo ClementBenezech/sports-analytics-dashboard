@@ -6,11 +6,14 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     background-color: #FBFBFB;
     border-radius: 0.3vw;
-    width: 15vw;
-    height: 15vw;
+    width: 18vw;
+    height: 18vw;
     display:flex;
     justify-content:center;
     align-items:center;
+    font-size: 1vw;
+    font-weight:bold;
+    text-align:center;
 `
 
 
@@ -46,8 +49,7 @@ const ScoreChart = (props:{userId: string}) => {
                 />
 
                 <RadialBar name = "score" min-angle={15} label={ false }  dataKey='score'/>
-
-                <Legend  align='center' payload={[{value: score, type: 'line', id: 'ID01'}]} stroke='red' iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' />
+                <Legend  layout='vertical' align='center' verticalAlign='middle' payload={[{value: score, type: 'line', id: 'ID01'}, {value: "de votre objectif", type:'line', id: 'ID02'}]} stroke='red' iconSize={10}    />
                 <Tooltip />
         </RadialBarChart>
         </ResponsiveContainer>
