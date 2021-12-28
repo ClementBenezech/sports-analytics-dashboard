@@ -23,11 +23,16 @@ const Greeting = styled.div`
     flex-direction:row;
 `
 
+/**
+ * Renders the main content section of the app.
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
 
 
 const MainContent = (props : {userId : string}) => {
 
-    const greetingMessage = "Félicitations, vous avez explosé vos objectifs hier!"
+    const greetingMessage = "Félicitation ! Vous avez explosé vos objectifs hier 👏"
 
       //Setting up a custom hook to fetch user data
                     return (  

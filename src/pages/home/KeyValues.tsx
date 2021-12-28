@@ -40,7 +40,7 @@ const KeyValues = (props : {userId : string}) => {
 
                 const currentKeyValue = keyValuesLabelsAndIcons.filter(element => element.key === key)
                 
-                return <KeyValueCard theKey = {key} keyLabel = {currentKeyValue[0].data.label} keyValue = {currentUserApiData.keyData[key]}/>
+                return <KeyValueCard theKey = {key} keyLabel = {currentKeyValue[0].data.label} keyValue = {currentUserApiData.keyData[key]} color = {currentKeyValue[0].data.color}/>
             })
             return (  
                 <KeyValuesContainer>

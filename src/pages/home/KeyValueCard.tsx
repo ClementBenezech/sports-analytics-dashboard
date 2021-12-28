@@ -6,7 +6,7 @@ const KeyValueCardContainer = styled.div`
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
-    background-color: #fffcf9;
+    background-color: #fbfbfb;
     font-size: 1vw;
     align-content:center;
     justify-items:center;
@@ -40,14 +40,13 @@ const KeyValueCardIcon = styled.img`
     align-items:center;
     justify-content:center;
     justify-items:center;
-    background-color: lightgrey;
     border-radius: 0.2vw;
 `
 
-const KeyValueCard = (props: {theKey:string, keyLabel:string, keyValue:number}):JSX.Element => {
+const KeyValueCard = (props: {theKey:string, keyLabel:string, keyValue:number, color: string}):JSX.Element => {
 
     return      <KeyValueCardContainer>
-                    <KeyValueCardIcon src = {"images/"+props.theKey+".svg"}/>
+                    <KeyValueCardIcon style={{backgroundColor: props.color}} src = {"images/"+props.theKey+".svg"}/>
                     <KeyValueCardDataContainer>
                         <KeyValueCardValue>{props.keyValue}</KeyValueCardValue>
                         <KeyValueCardLabel>{props.keyLabel}</KeyValueCardLabel>

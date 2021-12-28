@@ -10,14 +10,28 @@ const SideBarContainer = styled.div`
     background-color:black;
     display: flex;
     flex-direction:column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items:center;
 `;
 
+const LogosContainer = styled.div`
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items:center;
+`
+
 const Logo = styled.img`
-    width: 4vw;
-    height:4vw;
+    width: 6vh;
+    height:6vh;
     margin: 1vw;
+`
+
+const Copyright = styled.div`
+    transform: rotate(270deg);
+    color:white;
+    width: max-content;
+    font-size: 1vw;
 `
 
 
@@ -25,10 +39,13 @@ const Logo = styled.img`
 
 const SideBar = () => {
     return  <SideBarContainer>
-                <Logo src = {icon1}></Logo>
-                <Logo src = {icon2}></Logo>
-                <Logo src = {icon3}></Logo>
-                <Logo src = {icon4}></Logo>
+                <LogosContainer>
+                    <Logo src = {icon1}></Logo>
+                    <Logo src = {icon2}></Logo>
+                    <Logo src = {icon3}></Logo>
+                    <Logo src = {icon4}></Logo>
+                </LogosContainer>
+                <Copyright>Copyright SportSee 2021</Copyright>
             </SideBarContainer>
 }
 export default SideBar

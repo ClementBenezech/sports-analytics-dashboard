@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react"
 
-/* This custom hook fetches data for the user we get as a parameter*/
-/* The return datatype is dynamically determined based on the datatype parameter we pass when using the hook */
+
+/**
+ * This custom hook fetches data for the user we get as a parameter
+ * The return datatype is dynamically determined based on the datatype parameter we pass when using the hook
+ * @param { String } query
+ * @param { Type } dataType
+ * @return { Type | null | undefined }
+ */
+
 const useFetchApiData = <Type>(query: string, dataType: Type):[Type | null | undefined]  => {
 
     //Setting up a hook for our API data. This hook can have 3 types of values:
@@ -17,8 +24,8 @@ const useFetchApiData = <Type>(query: string, dataType: Type):[Type | null | und
             .then (response => 
                 response.json())
             .then (response => {
-                const data = response.data; /*Ajouter l'alias de type pour la réponse*/
-                //setting new value for apiData with what we got from the API call
+                const data = response.data;
+
                 if (data !== "can not get user") {
                     // If the result of the call is not an error message
                     setApiData(data);

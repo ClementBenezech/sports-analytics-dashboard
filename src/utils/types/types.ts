@@ -55,5 +55,3 @@ export type userAverageSessions = {
         } []
 }
 
-/* Break down into multiple types (session[], used by userSessions)*/
-
