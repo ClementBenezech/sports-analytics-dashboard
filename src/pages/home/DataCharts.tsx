@@ -3,6 +3,8 @@ import ActivityChart from "./ActivityChart";
 import AverageSessionChart from "./AverageSessionChart";
 import PerformanceChart from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
+import breakpoints from "../../utils/breakpoints";
+
 
 const DataChartsContainer = styled.div`
     width: 75%;
@@ -14,9 +16,19 @@ const DataChartsContainer = styled.div`
     justify-content: space-between;
     font-size: 2vw;
     color: black;
+
+    @media only screen and ${breakpoints.device.xs}{
+        width: 100%;
+    }
 `
 
-const DataCharts = (props : {userId : string}) => {
+/**
+ * Renders all 4 home dashboard Data  Charts
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
+
+const DataCharts = (props : {userId : string}):JSX.Element => {
             return (  
                 <DataChartsContainer>
                     <ActivityChart userId = {props.userId}/>

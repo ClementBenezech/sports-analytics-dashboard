@@ -2,6 +2,7 @@ import styled from "styled-components"
 import useFetchApiData from "../../utils/useFetchApiData";
 import { userData } from "../../utils/types/types";
 import { notFoundIcon } from "../../constants/constants";
+import breakpoints from "../../utils/breakpoints";
 
 const NameCardContainer = styled.div`
     width: 100%;
@@ -17,6 +18,12 @@ const NameCardContainer = styled.div`
     & i {
         color: red;
     }
+
+    @media only screen and ${breakpoints.device.xs}{
+        padding: 1vw;
+        height: auto;
+        margin: 2vh 0 2vh 0;
+    }
 `;
 
 const NameCardLabel = styled.div`
@@ -28,6 +35,12 @@ const NameCardValue = styled.div`
     width: max-content;
     color: red;
 `
+
+/**
+ * Renders a card displaying the name of the user.
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
 
 const NameCard = (props : {userId : string}):JSX.Element => {
 

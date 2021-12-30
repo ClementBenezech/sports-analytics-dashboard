@@ -2,6 +2,7 @@ import styled from "styled-components"
 import KeyValues from "../pages/home/KeyValues";
 import NameCard from "../pages/home/NameCard";
 import DataCharts from "../pages/home/DataCharts";
+import breakpoints from "../utils/breakpoints";
 
 const MainContentContainer = styled.div`
     width: 91%;
@@ -13,14 +14,22 @@ const MainContentContainer = styled.div`
     align-items:center;
     justify-content:flex-start;
     box-sizing: border-box;
+
+    @media only screen and ${breakpoints.device.xs}{
+        flex-direction:row-reverse;
+        height:auto;
+        width: 100%;
+        padding-left: 0;
+    }
 `;
 
 const Greeting = styled.div`
     width: 100%;
-    height: 3vw;
+    height: max-content;
     display: flex;
     flex-wrap:wrap;
     flex-direction:row;
+    margin-left: 0.2vw;
 `
 
 /**

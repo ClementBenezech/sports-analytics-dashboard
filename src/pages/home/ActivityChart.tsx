@@ -2,7 +2,8 @@ import { ResponsiveContainer, Bar, BarChart, XAxis, Tooltip, CartesianGrid, YAxi
 import { userActivity } from '../../utils/types/types';
 import useFetchApiData from '../../utils/useFetchApiData';
 import styled from 'styled-components';
-import internal from 'stream';
+import breakpoints from '../../utils/breakpoints';
+
 
 const Wrapper = styled.div`
     background-color: #FBFBFB;
@@ -13,10 +14,26 @@ const Wrapper = styled.div`
     justify-content:center;
     align-items:center;
     padding: 1vw;
+    font-size: 1vw;
     & i {
         color: red;
     }
+
+    @media only screen and ${breakpoints.device.xs}{
+        width: 100%;
+        height: 35vh;
+        padding: 0vw;
+        margin: 2vh 0 2vh 0;
+        font-size: 2vh;
+    }
+
 `
+
+/**
+ * Renders the activity chart based on the /user/{userId}/activity route of the API
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
 
 const ActivityChart = (props:{userId : string}):JSX.Element => {
 
@@ -45,7 +62,7 @@ const ActivityChart = (props:{userId : string}):JSX.Element => {
                 data={/*currentUserActivityApiData.sessions*/readyToDisplay}
                 margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                 >
-                    <YAxis tickLine={false} axisLine={false} interval={1} tickMargin={15} yAxisId="right" orientation="right" domain={['dataMin - 1', 'dataMax + 1']} fontSize={'1vw'}/>
+                    <YAxis tickLine={false} axisLine={false} interval={1} tickMargin={15} yAxisId="right" orientation="right" domain={['dataMin - 1', 'dataMax + 1']}/>
                     <XAxis dataKey="day" fontSize={20}/>
                     <YAxis yAxisId="left" orientation="left" hide={true}  />
                     <Tooltip labelStyle={{'display':'none'}} />

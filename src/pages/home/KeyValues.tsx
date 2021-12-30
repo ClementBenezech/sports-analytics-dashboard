@@ -4,6 +4,7 @@ import { userData } from "../../utils/types/types";
 import { notFoundIcon } from "../../constants/constants";
 import KeyValueCard from "./KeyValueCard";
 import { keyValuesLabelsAndIcons } from "../../constants/constants";
+import breakpoints from "../../utils/breakpoints";
 
 const KeyValuesContainer = styled.div`
     width: 14vw;
@@ -20,8 +21,19 @@ const KeyValuesContainer = styled.div`
     & i {
         color: red;
     }
+
+    @media only screen and ${breakpoints.device.xs}{
+        width: 100%;
+        flex-direction: row;
+        padding-bottom: 15vh;
+    }
 `
 
+/**
+ * Renders all 4 key value cards to display on the dashboard
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
 
 const KeyValues = (props : {userId : string}) => {
 

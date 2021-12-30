@@ -2,6 +2,7 @@ import { ResponsiveContainer, Legend, Radar, RadarChart, PolarGrid, PolarAngleAx
 import { userPerformance } from '../../utils/types/types';
 import useFetchApiData from '../../utils/useFetchApiData';
 import styled from 'styled-components';
+import breakpoints from '../../utils/breakpoints';
 
 const Wrapper = styled.div`
     background-color: #282D30;
@@ -20,7 +21,20 @@ const Wrapper = styled.div`
     & i {
         color: red;
     }
+
+    @media only screen and ${breakpoints.device.xs}{
+        width: 100%;
+        height: 35vh;
+        margin: 2vh 0 2vh 0;
+        font-size: 2vh;
+    }
 `
+
+/**
+ * Renders the performance radar chart based on the /user/{userId}/performance route from the API
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
 
 const PerformanceChart = (props:{userId : string}):JSX.Element => {
 

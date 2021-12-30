@@ -2,6 +2,7 @@ import { ResponsiveContainer, Legend, RadialBar, RadialBarChart, Tooltip, PolarA
 import { userData } from '../../utils/types/types';
 import useFetchApiData from '../../utils/useFetchApiData';
 import styled from 'styled-components';
+import breakpoints from '../../utils/breakpoints';
 
 const Wrapper = styled.div`
     background-color: #FBFBFB;
@@ -14,8 +15,19 @@ const Wrapper = styled.div`
     font-size: 1vw;
     font-weight:bold;
     text-align:center;
-`
 
+    @media only screen and ${breakpoints.device.xs}{
+        width: 100%;
+        height: 35vh;
+        margin: 2vh 0 2vh 0;
+        font-size: 2vh;
+    }
+`
+/**
+ * Renders the score Radial Chart based on the /user/{userId} route from the API
+ * @param { String } userId
+ * @return { JSX.Element }
+ */
 
 const ScoreChart = (props:{userId: string}) => {
 
